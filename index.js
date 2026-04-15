@@ -1,3 +1,6 @@
+console.log("JS loaded");
+
+
 const getComputerChoice = ()=>{
     const choice = Math.ceil(Math.random() * 3);
     return choice === 1? "rock": choice === 2? "paper": "scissors";
