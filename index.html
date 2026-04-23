@@ -1,13 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>rock-paper-scissors</title>
-    
-</head>
-<body>
-    
+  </head>
+  <body>
+    <div class="header">
+      <h1>Rock Paper Scissors</h1>
+      <img src="./images/gameLogo.svg" alt="" />
+    </div>
+
+    <div class="main-body">
+      <div class="choice-div">
+        <h2>Choose Your weapon:</h2>
+        <p>First to score 5 points win</p>
+      </div>
+
+      <div class="player-info">
+        <div class="player-score">
+          <span>?</span>
+          <span>Player: </span>
+        </div>
+        <div class="player-score">
+          <span>?</span>
+          <span>Computer: </span>
+        </div>
+      </div>
+      <div class="selections">
+          <div class="weapon">
+            <img class="pics" src="./images/paper.svg" alt="paper-sign" />
+          </div>
+
+          <div class="weapon">
+            <img class="pics" src="./images/scissors.svg" alt="scissors-sign" />
+          </div>
+
+          <div class="weapon">
+            <img class="pics" src="images/rock.svg" alt="" />
+          </div>
+      </div>
+    </div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
