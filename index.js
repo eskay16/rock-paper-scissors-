@@ -1,58 +1,86 @@
-// console.log("JS loaded");
+   let humanScore = 0;
+    let computerScore = 0;
+    let totalScore = 0;
+    const displayCompMove=  document.createElement("img");
+    const displayHumanMove = document.createElement("img");
 
-// const getComputerChoice = () => {
-//     const choice = Math.ceil(Math.random() * 3);
-//     return choice === 1 ? "rock" : choice === 2 ? "paper" : "scissors";
-// }
+    displayCompMove.className = "selectionImage";
+    displayHumanMove.className = "selectionImage";
 
-// const getHumanChoice = () => {
-//     const humanChoice = window.prompt("Enter Rock, paper or scissors", "").toLowerCase();
-//     return humanChoice;
-// }
+const getComputerChoice = () => {
+    const choice = Math.ceil(Math.random() * 3);
+    return choice === 1 ? "rock" : choice === 2 ? "paper" : "scissors";
+}
 
-// function playGame() {
-//     let humanScore = 0;
-//     let computerScore = 0;
 
-//     for (let i = 0; i < 5; i++) {
-//          playRound(getHumanChoice(), getComputerChoice());
-//     }
 
-//     function playRound(humanSelection, computerSelection) {
-//         if (humanSelection === computerSelection) return console.log("tie");
+function playGame(humanChoice) {
+    
+    const displayHumanScore = document.querySelector('#player');
+    const displayCompScore = document.querySelector('#computer');
+    const playerMove = document.querySelector(".playerMove");
+    const compMove = document.querySelector(".compMove");
+  
+    const commentator = document.querySelector(".commentator");
 
-//         switch (humanSelection) {
-//             case "rock":
-//                 computerSelection === "scissors"
-//                     ? (console.log("you win! Rock beats scissors"), humanScore++)
-//                     : (console.log("you lose! Paper beats Rock"), computerScore++);
-//                 break;
+    
+    
 
-//             case "paper":
-//                 computerSelection === "rock"
-//                     ? (console.log("you win! paper beats rock"), humanScore++)
-//                     : (console.log("you lose! scissors beats paper"), computerScore++);
-//                 break;
+    if (totalScore < 5) {
+         playRound(humanChoice, getComputerChoice());
+         console.log(totalScore);
+    }else{
+        return;
+    }
 
-//             case "scissors":
-//                 computerSelection === "paper"
-//                     ? (console.log("you win! scissors beats paper"), humanScore++)
-//                     : (console.log("you lose! Rock beats Scissors"), computerScore++);
-//                 break;
+    function playRound(humanSelection, computerSelection) {
+            playerMove? (playerMove.replaceWith(displayHumanMove) ): "";
 
-//             default:
-//                 console.log("Invalid input");
-//         }
-//     }
+            displayHumanMove.setAttribute("src", `./images/${humanChoice}.png`);
 
-//     console.log(
-//         humanScore > computerScore
-//             ? "you win!"
-//             : humanScore == computerScore
-//             ? "tie"
-//             : "you lose!",
-//         ` you ${humanScore}: computer ${computerScore}`
-//     );
-// }
+            compMove? (compMove.replaceWith(displayCompMove) ): "";
 
-// playGame();
+            displayCompMove.setAttribute("src", `./images/${computerSelection}.png`)
+
+        if (humanSelection === computerSelection) return commentator.textContent = "tie";
+
+        switch (humanSelection) {
+            case "rock":
+                computerSelection === "scissors"
+                    ? (commentator.textContent = "you win! Rock beats scissors", humanScore++)
+                    : (commentator.textContent = "you lose! Paper beats Rock", computerScore++);
+                break;
+
+            case "paper":
+                computerSelection === "rock"
+                    ? (commentator.textContent =  "you win! paper beats rock", humanScore++)
+                    : (commentator.textContent = "you lose! scissors beats paper", computerScore++);
+                break;
+
+            case "scissors":
+                computerSelection === "paper"
+                    ? (commentator.textContent = "you win! scissors beats paper", humanScore++)
+                    : (commentator.textContent = "you lose! Rock beats Scissors", computerScore++);
+                break;
+
+            default:
+        }
+
+        totalScore = humanScore > computerScore? humanScore: computerScore;
+        displayHumanScore.textContent = `${humanScore}`;
+        displayCompScore.textContent = `${computerScore}`;
+    }  
+}
+
+const selection = document.querySelector(".selections");
+
+selection.addEventListener("click", (event)=>{
+    const pickedChoice = event.target.getAttribute("class");
+
+    playGame(pickedChoice);
+
+
+
+    
+})
+

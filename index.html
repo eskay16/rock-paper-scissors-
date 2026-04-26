@@ -20,27 +20,29 @@
 
       <div class="player-info">
         <div class="player-score">
-          <span>?</span>
-          <span>Player: </span>
+          <span class="playerMove">?</span>
+          <span>Player: <span id="player"></span> </span>
         </div>
         <div class="player-score">
-          <span>?</span>
-          <span>Computer: </span>
+          <span class="compMove">?</span>
+          <span >Computer: <span id="computer"></span> </span>
         </div>
       </div>
       <div class="selections">
-          <div class="weapon">
-            <img class="pics" src="./images/paper.svg" alt="paper-sign" />
+          <div class="paper-div" >
+            <img class="paper" src="./images/paper.png" alt="paper-sign" />
           </div>
 
-          <div class="weapon">
-            <img class="pics" src="./images/scissors.svg" alt="scissors-sign" />
+          <div class="scissors-div">
+            <img class="scissors" src="./images/scissors.png" alt="scissors-sign" />
           </div>
 
-          <div class="weapon">
-            <img class="pics" src="images/rock.svg" alt="" />
+          <div class="-div">
+            <img class="rock" src="images/rock.png" alt="" />
           </div>
       </div>
+
+      <p class="commentator"></p>
     </div>
     <script src="index.js"></script>
   </body>

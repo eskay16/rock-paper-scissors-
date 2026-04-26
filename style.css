@@ -47,7 +47,12 @@ body{
 }
 
 
-.pics{
+.rock, .paper, .scissors{
     width: 500px;
+    height: auto;
+}
+
+.selectionImage{
+    width: 200px;
     height: auto;
 }
