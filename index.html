@@ -21,11 +21,11 @@
       <div class="player-info">
         <div class="player-score">
           <span class="playerMove">?</span>
-          <span>Player: <span id="player"></span> </span>
+          <span>Player: <span id="player">0</span> </span>
         </div>
         <div class="player-score">
           <span class="compMove">?</span>
-          <span >Computer: <span id="computer"></span> </span>
+          <span >Computer: <span id="computer">0</span> </span>
         </div>
       </div>
       <div class="selections">
@@ -43,6 +43,14 @@
       </div>
 
       <p class="commentator"></p>
+
+      <div class="modal-overlay">
+        <div class="modal-box">
+          <h1 class="announceWinner">Game Over</h1>
+        <button id="closebtn" class="modal-close">Play Again!!</button>
+        </div>
+        
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
